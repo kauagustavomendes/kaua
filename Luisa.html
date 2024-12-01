@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedi o Meu Amor em Namoro</title>
+    <style>
+        /* Definindo as variáveis de cor */
+        :root {
+            --rxH1: #00796b; /* Cor título 1 */
+            --rsBtN1: #ff7043; /* Cor botão normal 1 */
+            --rsBtHv1: #ff3d00; /* Cor botão hover 1 */
+            --backG1: #e0f7fa; /* Cor fundo 1 */
+
+            --rxH2: #800080; /* Cor título 2 */
+            --rsBtN2: #ff69b4; /* Cor botão normal 2 */
+            --rsBtHv2: #ff1493; /* Cor botão hover 2 */
+            --backG2: #ffebcd; /* Cor fundo 2 */
+        }
+
+        /* Estilos gerais */
+        body {
+            background-color: var(--backG1);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: var(--rxH1);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 50px;
+            color: var(--rxH1);
+        }
+
+        p {
+            font-size: 1.5em;
+            margin: 20px;
+            color: var(--rxH1);
+        }
+
+        button {
+            background-color: var(--rsBtN1);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: var(--rsBtHv1);
+        }
+
+        #b2, #b3, #b4, #b5, #p2, #p3, #p4, #p5, #h2 {
+            display: none;
+        }
+
+        #h2 {
+            color: var(--rxH1);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1">Especial</h1>
+
+    <p id="p1">Estamos completando um trimestre!!!</p>
+    <button id="b1" onclick="revelar(1)">1</button>
+    
+    <p id="p2"></p>
+    <button id="b2" onclick="revelar(2)">2</button>
+    
+    <p id="p3">Eu gostaria de saber se você quer ser minha pessoa? 💖</p>
+    <button id="b3" onclick="revelar(3)">3</button>
+    
+    <p id="p4">Obrigada! Agora clique no próximo botão!</p>
+    <button id="b4" onclick="revelar(4)">4</button>
+
+    <h1 id="h2">Você é a minha pessoa especial!</h1>
+    <p id="p5">Agora clique abaixo para responder!</p>
+    <button id="b5" onclick="createParagraph()">5</button>
+
+    <div id="newParagraph"></div>
+
+    <script>
+        // Função para revelar os elementos conforme os botões são clicados
+        function revelar(BttNumber) {
+            switch (BttNumber) {
+                case 1:
+                    document.getElementById("b1").style.display = "none";
+                    document.getElementById("p1").style.display = "none";
+                    document.getElementById("p2").style.display = "block";
+                    document.getElementById("b2").style.display = "inline-block";
+                    break;
+                case 2:
+                    document.getElementById("b2").style.display = "none";
+                    document.getElementById("p2").style.display = "none";
+                    document.getElementById("p3").style.display = "block";
+                    document.getElementById("b3").style.display = "inline-block";
+                    break;
+                case 3:
+                    document.getElementById("b3").style.display = "none";
+                    document.getElementById("p3").style.display = "none";
+                    document.getElementById("p4").style.display = "block";
+                    document.getElementById("b4").style.display = "inline-block";
+                    break;
+                case 4:
+                    // Troca de paleta de cores
+                    changePalette();
+                    document.getElementById("h1").style.display = "none";
+                    document.getElementById("b4").style.display = "none";
+                    document.getElementById("p4").style.display = "none";
+                    document.getElementById("h2").style.display = "inline-block";
+                    document.getElementById("p5").style.display = "block";
+                    document.getElementById("b5").style.display = "inline-block";
+                    break;
+            }
+        }
+
+        // Função para alterar a paleta de cores
+        function changePalette() {
+            // Mudando as variáveis diretamente para a nova paleta de cores
+            document.documentElement.style.setProperty('--rxH1', '#800080');
+            document.documentElement.style.setProperty('--rsBtN1', '#ff69b4');
+            document.documentElement.style.setProperty('--rsBtHv1', '#ff1493');
+            document.documentElement.style.setProperty('--backG1', '#ffebcd');  // Cor de fundo 2
+
+            document.documentElement.style.setProperty('--rxH2', '#00796b');
+            document.documentElement.style.setProperty('--rsBtN2', '#ff7043');
+            document.documentElement.style.setProperty('--rsBtHv2', '#ff3d00');
+            document.documentElement.style.setProperty('--backG2', '#e0f7fa');
+
+            // Alterando diretamente o fundo do body
+            document.body.style.backgroundColor = '#ffebcd';
+        }
+
+        let numeroAtual = 1;
+
+        // Função para criar o parágrafo com a tradução
+        function createParagraph() {
+            var paragraph = document.createElement("p");
+            paragraph.textContent = gerarNumero();
+            document.getElementById("newParagraph").appendChild(paragraph);
+        }
+
+        // Função para gerar a tradução do "Eu te amo"
+        function gerarNumero() {
+            let Love;
+
+            switch (numeroAtual) {
+                case 1:
+                    Love = "Deutsch: Ich liebe dich";
+                    break;
+                case 2:
+                    Love = "Japonês: Ai shitemasu";
+                    break;
+                case 3:
+                    Love = "Russo: YA tebya lyublyu";
+                    break;
+                case 4:
+                    Love = "Francês: Je t'aime";
+                    break;
+                case 5:
+                    Love = "Italiano: Ti amo";
+                    break;
+                case 6:
+                    Love = "Espanhol: Te quiero mi amore";
+                    break;
+                case 7:
+                    Love = "Inglês: I love you";
+                    break;
+                case 8:
+                    Love = "Português: Eu te amo";
+                    break;
+            }
+
+            numeroAtual = numeroAtual === 8 ? 1 : numeroAtual + 1;
+
+            return Love;
+        }
+    </script>
+</body>
+</html>
