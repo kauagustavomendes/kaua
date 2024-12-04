@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedi o Meu Amor em Namoro</title>
+    <title>Página bonitinha</title>
+    <link rel="icon" href="caminho/para/seu/favicon.ico" type="image/x-icon">
     <style>
         /* Definindo as variáveis de cor */
         :root {
@@ -39,6 +40,11 @@
             margin: 20px;
             color: var(--rxH1);
         }
+        img {
+            border-radius: 10px;
+            border: #00796b;
+            border:#00796b
+        }
 
         button {
             background-color: var(--rsBtN1);
@@ -55,7 +61,7 @@
             background-color: var(--rsBtHv1);
         }
 
-        #b2, #b3, #b4, #b5, #p2, #p3, #p4, #p5, #h2 {
+        #b2, #b3, #b4, #b5, #b6, #p2, #p3, #p4, #p5, #h2, #img2, #img3, #img4, #img5 {
             display: none;
         }
 
@@ -65,23 +71,32 @@
     </style>
 </head>
 <body>
-    <h1 id="h1">Especial</h1>
+    <h1 id="h1">✨Comemoração Especial!!!</h1>
+    <img id="img1" src="https://i.pinimg.com/736x/88/21/9a/88219ac74f92bbe57843b1fd5f4046fb.jpg" alt="Descrição do GIF" style="width: 300px; height: auto;">
+    <p id="p1">Já estamos completando um trimestre e eu amei te conhecer!!!<br></p>
+    <button id="b1" onclick="revelar(1)">Docinho🧁🌸</button>
+    
+    <img id="img2" src="https://i.pinimg.com/736x/5b/f2/b7/5bf2b7c312367ca24ba25ee4b6b1b004.jpg" alt="Descrição do GIF" style="width: 300px; height: auto;">
+    <p id="p2">Eu quero te conhecer cada vez mais!!! </p>
+    <button id="b2" onclick="revelar(2)">Amore😊💖</button>
+    
+    <img id="img3" src="https://i.pinimg.com/736x/2b/19/b6/2b19b6beb718582341c0f3200a32a206.jpg" alt="Descrição do GIF" style="width: 300px; height: auto;">
+    <p id="p3">E eu quero passar cada momento do próximo ano com você!!!</p>
+    <button id="b3" onclick="revelar(3)">Sunshine🌻☀️</button>
+    
+    <img id="img4" src="https://i.pinimg.com/736x/f9/44/a4/f944a4fa7ce99a6b689928e31f4fa73a.jpg" alt="Descrição do GIF" style="width: 300px; height: auto;">
+    <p id="p4">Agora uma pergunta que você tem que pensar bem!!!</p>
+    <button id="b4" onclick="revelar(4)">Honey!!!</button>
 
-    <p id="p1">Estamos completando um trimestre!!!</p>
-    <button id="b1" onclick="revelar(1)">1</button>
-    
-    <p id="p2"></p>
-    <button id="b2" onclick="revelar(2)">2</button>
-    
-    <p id="p3">Eu gostaria de saber se você quer ser minha pessoa? 💖</p>
-    <button id="b3" onclick="revelar(3)">3</button>
-    
-    <p id="p4">Obrigada! Agora clique no próximo botão!</p>
-    <button id="b4" onclick="revelar(4)">4</button>
-
-    <h1 id="h2">Você é a minha pessoa especial!</h1>
-    <p id="p5">Agora clique abaixo para responder!</p>
-    <button id="b5" onclick="createParagraph()">5</button>
+    <h1 id="h2">Você quer passar o proximo ano como minha namorada??</h1>
+    <br>
+    <img id="img5" src="https://i.pinimg.com/originals/e1/43/92/e14392b3bb9f745025a5cf6a9abe11be.gif" alt="Descrição do GIF" style="width: 300px; height: auto;">
+    <p id="p5">Agora uma pergunta que você tem que pensar bem!!!</p>
+    <button id="b5" onclick="createParagraph()">Sim!!!</button>
+    <button id="b6" 
+        onmouseover="this.innerHTML='Sim!!!'; document.getElementById('b5').innerHTML='Não!!!'" 
+        onmouseout="this.innerHTML='Não!!!'; document.getElementById('b5').innerHTML='Sim!!!'" 
+        onclick="createParagraph()">Não!!!</button> <!--Troca Sim por Não e Não por Sim-->
 
     <div id="newParagraph"></div>
 
@@ -92,20 +107,26 @@
                 case 1:
                     document.getElementById("b1").style.display = "none";
                     document.getElementById("p1").style.display = "none";
+                    document.getElementById("img1").style.display = "none";
                     document.getElementById("p2").style.display = "block";
                     document.getElementById("b2").style.display = "inline-block";
+                    document.getElementById("img2").style.display = "inline-block";
                     break;
                 case 2:
                     document.getElementById("b2").style.display = "none";
                     document.getElementById("p2").style.display = "none";
+                    document.getElementById("img2").style.display = "none";
                     document.getElementById("p3").style.display = "block";
                     document.getElementById("b3").style.display = "inline-block";
+                    document.getElementById("img3").style.display = "inline-block";
                     break;
                 case 3:
                     document.getElementById("b3").style.display = "none";
                     document.getElementById("p3").style.display = "none";
+                    document.getElementById("img3").style.display = "none";
                     document.getElementById("p4").style.display = "block";
                     document.getElementById("b4").style.display = "inline-block";
+                    document.getElementById("img4").style.display = "inline-block";
                     break;
                 case 4:
                     // Troca de paleta de cores
@@ -113,9 +134,12 @@
                     document.getElementById("h1").style.display = "none";
                     document.getElementById("b4").style.display = "none";
                     document.getElementById("p4").style.display = "none";
-                    document.getElementById("h2").style.display = "inline-block";
+                    document.getElementById("img4").style.display = "none";
                     document.getElementById("p5").style.display = "block";
+                    document.getElementById("h2").style.display = "inline-block";
                     document.getElementById("b5").style.display = "inline-block";
+                    document.getElementById("b6").style.display = "inline-block";
+                    document.getElementById("img5").style.display = "inline-block";
                     break;
             }
         }
@@ -155,7 +179,7 @@
                     Love = "Deutsch: Ich liebe dich";
                     break;
                 case 2:
-                    Love = "Japonês: Ai shitemasu";
+                    Love = "Japonês: Aishiteru";
                     break;
                 case 3:
                     Love = "Russo: YA tebya lyublyu";
@@ -178,7 +202,7 @@
             }
 
             numeroAtual = numeroAtual === 8 ? 1 : numeroAtual + 1;
-
+            
             return Love;
         }
     </script>
